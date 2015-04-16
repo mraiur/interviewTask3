@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
     concat = require('gulp-concat'),
+    copy = require('gulp-copy'),
     bowerFiles = require('main-bower-files');
 
 gulp.task('bower', function(){
@@ -29,6 +30,13 @@ gulp.task('scripts', function(){
         .pipe( gulp.dest('./public/javascript/') );
 });
 
+gulp.task('copy', function(){
+    gulp.src([
+        './public/bower/glyphicons*'
+    ])
+    .pipe( gulp.dest('./public/fonts/bootstrap/') );
+});
+
 gulp.task('default', [], function(){
-    gulp.start('bower', 'sass', 'scripts');
+    gulp.start('bower', 'sass', 'copy', 'scripts');
 });
