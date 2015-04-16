@@ -1,0 +1,10 @@
+function UpdateContact(DATA){
+    if(validate data){
+        contact exits;
+
+        update contact data;
+
+        return contact intstance;
+    }
+    return false;
+}
